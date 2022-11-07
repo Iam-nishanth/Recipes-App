@@ -33,7 +33,7 @@ const Trending = () => {
                     arrows: false,
                     pagination: false,
                     drag: 'free',
-                    gap: '5rem'
+                    gap: '3rem'
                 }}>
                     {trending.map(recipe => {
                         return (
