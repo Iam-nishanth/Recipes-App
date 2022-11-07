@@ -14,14 +14,14 @@ const Vegetarian = () => {
     }, [])
 
     const getTrending = async () => {
+        
+            const api = await fetch(
+                `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=21&tags=vegetarian`
+            );
+            const data = await api.json()
 
-        const api = await fetch(
-            `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=21&tags=vegetarian`
-        );
-        const data = await api.json()
-
-        setTrending(data.recipes)
-        // console.log(data.recipes)
+            setTrending(data.recipes)
+            // console.log(data.recipes)
 
     }
     return (
@@ -39,11 +39,11 @@ const Vegetarian = () => {
                         return (
                             <SplideSlide key={recipe.id}>
                                 <Card>
-                                    <Link to={'/recipe/' + recipe.id}>
-                                        <p>{recipe.title}</p>
-                                        <img src={recipe.image} alt={recipe.title} />
-                                        <Gradient />
-                                    </Link>
+                                <Link to={'/recipe/'+recipe.id}>
+                                    <p>{recipe.title}</p>
+                                    <img src={recipe.image} alt={recipe.title} />
+                                    <Gradient/>
+                                </Link>
                                 </Card>
                             </SplideSlide>
                         )
@@ -88,7 +88,7 @@ const Card = styled.div`
         align-items: center;
     }
 `
-const Gradient = styled.div`
+    const Gradient = styled.div`
         z-index:3;
         position: absolute;
         width: 100%;
