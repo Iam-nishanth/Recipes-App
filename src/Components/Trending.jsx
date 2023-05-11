@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Trending = () => {
@@ -15,14 +15,14 @@ const Trending = () => {
     }, [])
 
     const getTrending = async () => {
-        
-            const api = await fetch(
-            `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=21`
-            );
-            const data = await api.json()
 
-            setTrending(data.recipes)
-            // console.log(data.recipes)
+        const api = await fetch(
+            `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=21`
+        );
+        const data = await api.json()
+
+        setTrending(data.recipes)
+        // console.log(data.recipes)
     }
     return (
         <div>
@@ -33,17 +33,29 @@ const Trending = () => {
                     arrows: false,
                     pagination: false,
                     drag: 'free',
-                    gap: '3rem'
+                    gap: '1rem',
+                    mediaQuery: 'max',
+                    breakpoints: {
+                        800: {
+                            perPage: 3,
+                        },
+                        640: {
+                            perPage: 2,
+                        },
+                        360: {
+                            perPage: 1,
+                        }
+                    }
                 }}>
                     {trending.map(recipe => {
                         return (
                             <SplideSlide key={recipe.id}>
                                 <Card>
-                                <Link to={'/recipe/'+recipe.id}>
-                                    <p>{recipe.title}</p>
-                                    <img src={recipe.image} alt={recipe.title} />
-                                    <Gradient/>
-                                </Link>
+                                    <Link to={'/recipe/' + recipe.id}>
+                                        <p>{recipe.title}</p>
+                                        <img src={recipe.image} alt={recipe.title} />
+                                        <Gradient />
+                                    </Link>
                                 </Card>
                             </SplideSlide>
                         )
@@ -70,7 +82,7 @@ const Card = styled.div`
         width:100%;
         height:100%;
         object-fit: cover;
-        border-radius: 3rem;
+        border-radius: 1.5rem;
     }
     p{
         position:absolute;
@@ -88,7 +100,7 @@ const Card = styled.div`
         align-items: center;
     }
 `
-    const Gradient = styled.div`
+const Gradient = styled.div`
         z-index:3;
         position: absolute;
         width: 100%;

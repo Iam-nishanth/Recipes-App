@@ -23,7 +23,7 @@ function Cuisine() {
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
-      transition={{duration: 0.5}}
+      transition={{ duration: 0.5 }}
     >
       {cuisine.map((item) => {
         return (
@@ -43,6 +43,7 @@ const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
+  margin-top: 1.5rem;
 `
 const Card = styled.div`
   img{

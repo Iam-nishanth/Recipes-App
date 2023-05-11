@@ -62,12 +62,16 @@ function Information() {
 }
 
 const DetailsWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 2rem;
   margin-bottom: 5rem;
   display: flex;
+  gap: 2rem;
   img{
     border-radius: 2rem;
-    filter: saturate(1.8)
+    filter: saturate(1.8);
+    width: 100%;
+    min-height: 300px;
+    
   }
   .active{
     background: linear-gradient(65deg,coral, #313131);
@@ -78,9 +82,15 @@ const DetailsWrapper = styled.div`
   li{
     font-size: 1.2rem;
     line-height: 2.5rem;
+    list-style-type: circle;
   }
   ul{
     margin-top: 2rem;
+    padding: 20px;
+  }
+
+  flex-direction: column;
+  @media (max-width: 800px){
   }
 `
 const Button = styled.button`
@@ -89,15 +99,14 @@ const Button = styled.button`
   background: #cccc83;
   border: transparent;
   border-radius: 2rem;
-  margin-right: 2rem;
+  margin-right: 10px;
   font-weight: 600;
 `
 const Info = styled.div`
-  margin-left: 5rem;
 
   h2{
     margin-top: 2rem;
-    margin-botom: 2rem;
+    margin-bottom: 2rem;
     color: coral;
   }
   h3, ol>li{

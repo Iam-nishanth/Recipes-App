@@ -1,19 +1,19 @@
 import Categories from './Components/Categories';
 import AllPages from './Components/Pages/AllPages';
-import { BrowserRouter,Link } from 'react-router-dom'
+import { BrowserRouter, Link } from 'react-router-dom'
 import SearchBar from './Components/SearchBar';
 import styled from 'styled-components';
-import {GiForkKnifeSpoon} from 'react-icons/gi'
+import { GiForkKnifeSpoon } from 'react-icons/gi'
 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-      <Nav>
-        <GiForkKnifeSpoon></GiForkKnifeSpoon>
-        <Logo to={'/'}>Simpler Recipies</Logo>
-      </Nav>
+        <Nav>
+          <GiForkKnifeSpoon></GiForkKnifeSpoon>
+          <Logo to={'/'}>Simpler Recipies</Logo>
+        </Nav>
         <SearchBar />
         <Categories />
         <AllPages />

@@ -1,38 +1,38 @@
 /* eslint-disable no-unused-vars */
-import {FaPizzaSlice, FaHamburger} from 'react-icons/fa'
-import {GiNoodles,GiChickenOven} from 'react-icons/gi'
+import { FaPizzaSlice, FaHamburger } from 'react-icons/fa'
+import { GiNoodles, GiChickenOven } from 'react-icons/gi'
 import styled from 'styled-components'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Categories() {
-  return (
-    <List>
-        <SLink to={'/cuisine/Italian'}>
-            <FaPizzaSlice/>
-            <h4>Italian</h4>
-        </SLink>
-        <SLink to={'/cuisine/American'}>
-            <FaHamburger/>
-            <h4>American</h4>
-        </SLink>
-        <SLink to={'/cuisine/Indian'}>
-            <GiChickenOven/>
-            <h4>Indian</h4>
-        </SLink>
-        <SLink to={'/cuisine/Japanese'}>
-            <GiNoodles/>
-            <h4>Japanese</h4>
-        </SLink>
-    </List>
-  )
+    return (
+        <List>
+            <SLink to={'/cuisine/Italian'}>
+                <FaPizzaSlice />
+                <h4>Italian</h4>
+            </SLink>
+            <SLink to={'/cuisine/American'}>
+                <FaHamburger />
+                <h4>American</h4>
+            </SLink>
+            <SLink to={'/cuisine/Indian'}>
+                <GiChickenOven />
+                <h4>Indian</h4>
+            </SLink>
+            <SLink to={'/cuisine/Japanese'}>
+                <GiNoodles />
+                <h4>Japanese</h4>
+            </SLink>
+        </List>
+    )
 }
 
 const List = styled.div`
     display: flex;
-    justify-content: center;
-    margin: 2rem;
-    text-align: center;
-    
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto; 
 `
 const SLink = styled(NavLink)`
     display: flex;
@@ -42,7 +42,6 @@ const SLink = styled(NavLink)`
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    margin-right: 2rem;
     text-decoration: none;
     font-size: 0.6rem;
     background: linear-gradient(35deg, #ccc, coral);

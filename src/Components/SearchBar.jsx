@@ -5,42 +5,40 @@ import { useNavigate } from "react-router-dom"
 
 
 function SearchBar() {
-    const [input, setInput]= useState('')
+    const [input, setInput] = useState('')
     const Navigate = useNavigate()
 
-    const submit = (e)=>{
+    const submit = (e) => {
         e.preventDefault()
-        Navigate('/searched/'+input)
+        Navigate('/searched/' + input)
     }
 
     return (
         <StyeldForm onSubmit={submit}>
-
             <div>
-                <FaSearch></FaSearch>
-                <input onChange={(e)=> setInput(e.target.value)} type='text' value={input} />
+                <FaSearch />
+                <input onChange={(e) => setInput(e.target.value)} type='text' value={input} />
             </div>
         </StyeldForm>
     )
 }
 
 const StyeldForm = styled.form`
-    margin: 0rem 6rem;
 
     div{
         position: relative;
-        width: 60%;
+        width: 100%;
+        max-width: 600px;
         margin: 2rem auto;
     }
     
     input{
-        border: none;
-        background: linear-gradient(35deg,#494949, #ccc);
+        border: 2px solid #ddd;
+        background-color: black;
         font-size: 1rem;
-        color: Whitesmoke;
+        color: #fff;
         padding: 1rem 3rem;
         border-radius: 1rem;
-        outline: none;
         width:100%;
     }
     svg{
@@ -49,7 +47,7 @@ const StyeldForm = styled.form`
         top: 50%;
         left: 0%;
         transform: translate(100%,-50%);
-        color: black;
+        color: #ddd;
     }
 `
 

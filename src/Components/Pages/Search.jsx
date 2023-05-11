@@ -25,7 +25,7 @@ function Search() {
       {Search.map((item) => {
         return (
           <Card key={item.id}>
-            <Link to={'/recipe/'+ item.id}>
+            <Link to={'/recipe/' + item.id}>
               <img src={item.image} alt={item.title} />
               <h4>{item.title}</h4>
             </Link>
@@ -40,6 +40,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
+  margin-top: 30px;
 `
 const Card = styled.div`
   img{
